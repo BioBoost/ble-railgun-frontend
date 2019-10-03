@@ -1,0 +1,70 @@
+body { 
+  background: url(img/background.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.7;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  background-color: #F4F2F3;
+  color: #BA1200;
+  text-align: center;
+  padding: 0px 12px 12px 12px;
+  margin-left: 48px;
+  margin-right: 48px;
+  border-radius: 34px;
+  opacity: 0.7;
+  font-size: 64px;
+  font-family: 'Notable', sans-serif;
+}
+
+#log-container {
+  background-color: black;
+  opacity: 0.9;
+  margin: auto;
+  width: 70vw;
+  height: 50%;
+  margin-top: 80px;
+  border-radius: 34px;
+  padding: 34px;
+  color: white;
+  overflow-y: auto;
+}
+
+#log-container p {
+  opacity: 1;
+  color: white;
+}
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  opacity: 0.7;
+  background-color: black;
+  width: 100vw;
+  padding: 16px 64px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.controls > .xl-button {
+  margin-left: 43px;
+  margin-right: 43px;
+}
+
+.xl-button {
+  padding: 10px 32px;
+  font-size: 24px;
+  border-radius: 35px;
+  background-color: #009FFD;
+}
+
+.xl-button:hover {
+  background-color: #FFA400;
+}
