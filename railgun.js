@@ -20,10 +20,36 @@ let connect = () => {
   })
   .then(server => {
     log('Connected to GATT server');
+    subscribeToBatteryNotifications();
   })
   .catch(error => {
     log('ERROR ' + error);
   });
+}
+
+let subscribeToBatteryNotifications = () => {
+  if (device) {
+    log('Getting Battery Level Service ...');
+    device.gatt.getPrimaryService('battery_service')
+    .then(service => {
+      log('Getting Battery Level Characteristic ...');
+      return service.getCharacteristic('battery_level');
+    })
+    .then(characteristic => {
+      return characteristic.startNotifications().then(_ => {
+        log('Subscribed to battery level notifications');
+        characteristic.addEventListener('characteristicvaluechanged', handleBatteryLevelNotification);
+      });
+    })
+    .catch(error => {
+      log('ERROR ' + error);
+    });
+  }
+}
+
+let handleBatteryLevelNotification = (event) => {
+  let value = event.target.value;
+  log('Batterylevel: ' + value.getUint8(0));
 }
 
 let shoot = () => {
