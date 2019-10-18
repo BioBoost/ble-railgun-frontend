@@ -5,6 +5,5 @@ Webpage to control the Raspberry Pi Railgun. Uses Web API to access bluetooth de
 ## Serve
 
 ```shell
-npm install -g serve
-serve
+npx serve
 ```
